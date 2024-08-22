@@ -1,0 +1,2229 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>  كورس الادارة  المالية  </title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            margin: 0;
+            padding: 0;
+            font-weight: bold;
+            color: #797676;
+            letter-spacing: 1.3px;
+            height: 100vh;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+        nav{
+            background-color: #503838;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            transition: background-color 0.5s;
+            padding: 10px;
+            overflow: hidden;
+            background-image: linear-gradient(to right, #503838, #8f4444);
+
+
+        }
+        nav ul{
+            list-style: none;
+            padding: 15px;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+        nav ul li{
+            margin: 0 10px;
+            font-size: 1rem;
+            color: #fff;
+        }
+        nav ul li a{
+            text-decoration: none;
+            color: #fff;
+            
+        }
+        .decorated-name {
+            font-size: 22px;
+            font-weight: bold;
+            color: #f0f0f0;
+            background: linear-gradient(90deg, #ff0066, #ffcc00, #33cc33, #3399ff, #9933ff);
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: shine 3s linear infinite, float 6s ease-in-out infinite;
+            text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+            position: relative;
+        }
+        .decorated-name::before, .decorated-name::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: inherit;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            filter: blur(10px);
+        }
+        .decorated-name::after {
+            filter: blur(20px);
+        }
+        @keyframes shine {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+        
+        .content {
+            height: 100vh;
+            letter-spacing: 1.3px;
+            padding: 10px;
+            line-height: 1.6;
+            text-align: justify;
+            overflow-x: auto; /* يسمح بالتمرير الأفقي داخل المحتوى إذا لزم الأمر */
+            font-size: 14px;
+        }
+        
+        .dropdown {
+            margin-bottom: 20px;
+            position: relative;
+           display: inline-block;
+        }
+        .dropdown select {
+            padding: 10px;
+            border-radius: 5px;
+        }
+        
+        .content {
+            margin-top: 20px;
+        }
+        #sectionSelect {
+            margin-top: 90px;
+            width: 90%;
+        }
+        .section {
+            display: none;    
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 8px;
+             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+             overflow-x: auto; /* يسمح بالتمرير الأفقي داخل القسم إذا لزم الأمر */
+           }
+        
+        p {
+            color: rgb(69, 128, 237);
+            margin: 0;
+            padding: 0px 5px;
+            font-weight: 800;
+        }
+        h3 {
+            text-align: center;
+            color: rgb(75, 149, 240);
+            font-weight: 900;
+            border-left: 8px solid #45a049;
+            border-right: 8px solid #45a049;
+            box-shadow: 0px 5px 10px gray;
+            border-radius: 8px;
+        }
+        option {
+            font-weight: 600;
+            font-size: 14px;
+        }
+       /* تنسيق الجدول */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    display: block;
+    overflow-x: auto; /* يسمح بالتمرير الأفقي داخل الجدول */
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border: 2px solid #0f0bea;
+    
+}
+
+th {
+    background-color: #222020;
+    color: chocolate;
+}
+
+td {
+    word-wrap: break-word;
+    color: #000;
+}
+
+/* تنسيق h3 */
+h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #5a90ec;
+}
+
+/* تنسيق p */
+p {
+   
+    line-height: 1.6;
+}
+
+/* تنسيق ul و li */
+ul {
+    list-style-type: none;
+    padding: 8px;
+}
+
+
+
+/* إعدادات تجاوب */
+@media only screen and (max-width: 768px) {
+    .content {
+        padding: 10px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+    p{
+        font-size: 14px;
+    }
+
+    h3 {
+        font-size: 16px;
+    }
+    li{
+        font-size: 14px;
+    }
+}
+        td:hover {
+            background-color: rgb(134, 241, 184);
+        }
+        ul{
+            box-shadow: 0px 5px 10px #420202;
+            border-radius: 8px;
+            padding: auto;
+            transition: 2s ease;
+        }
+        ul:hover{
+            box-shadow: 0px 0px 10px rgb(72, 241, 154);
+        }
+        li{
+            color: blueviolet;
+            font-weight: 900;
+            padding: auto;
+        }
+        @media (min-width: 390px) and (max-width: 430px)  {
+            p{
+                font-size: 14px;
+            }
+            h3,h2{
+                font-size: 16px;
+            }
+            
+            li{
+                font-size: 15px;
+            }
+            body{
+                font-size: 14px;
+            }
+        }
+        .quiz-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-family: 'Cairo', sans-serif;
+        }
+        .quiz-container h1 {
+            text-align: center;
+            color: #007BFF;
+            font-family: 'Cairo', sans-serif;
+        }
+        .quiz-container .question {
+            margin: 20px 0;
+            font-family: 'Cairo', sans-serif;
+        }
+        .quiz-container .options {
+            list-style-type: none;
+            padding: 0;
+            font-family: 'Cairo', sans-serif;
+        }
+        .quiz-container .options li {
+            margin: 10px 0;
+            font-family: 'Cairo', sans-serif;
+            font-weight: 800;
+        }
+        .quiz-container .options li button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-family: 'Cairo', sans-serif;
+            font-weight: 800;
+        }
+        .quiz-container .options li button.correct {
+            background-color: green;
+            color: white;
+            font-family: 'Cairo', sans-serif;
+        }
+        .quiz-container .options li button.incorrect {
+            background-color: red;
+            color: white;
+            font-family: 'Cairo', sans-serif;
+        }
+        b{
+            color: #45a049;
+            font-weight: 900;
+        }
+        h2{
+            color: #480148;
+            font-weight: 900;
+            background-color: #f17b7b;
+            text-align: center;
+            border-radius: 10px;
+            font-size: 16px;
+            padding: 8px;
+            transition: 2s ease;
+            cursor: pointer;
+        }
+        h2:hover{
+            box-shadow: 0px 0px 10px #ff0066;
+        }
+        ::selection{
+            background-color: yellow;
+            color: black;
+        }
+       
+   
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            z-index: 1000;
+        }
+
+        .calculator {
+            border: 1px solid #ccc;
+            padding: 0.5rem;
+            width: 100%;
+            max-width: 200px;
+            position: fixed;
+            right: 1.5rem;
+            top: 1.5rem;
+            background-color: #ffffff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            display: none;
+            z-index: 1001;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+
+        .calculator-display {
+            width: 100%;
+            margin: 0.5rem 0;
+            padding: 0.5rem;
+            text-align: right;
+            border: 1px solid #ccc;
+            font-size: 1.2rem;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+
+        .calculator-keys {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.5rem;
+        }
+
+        .calculator-keys button {
+            padding: 0.8rem;
+            font-size: 0.8rem;
+            background-color: #e0e0e0;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: 800;
+        }
+        .calculator-keys button:hover{
+            background-color: #78f1a7;
+        }
+
+        .calculator-keys button.operator {
+            background-color: #f0ad4e;
+        }
+        .calculator-keys button.operator:hover{
+            background-color: #78f1a7; 
+        }
+
+        .calculator-keys button.equal {
+            background-color: #007bff;
+            color: #fff;
+            grid-column: span 2;
+        }
+        .calculator-keys button.equal:hover{
+            background-color: #78f1a7;
+        }
+
+        .toggle-calculator {
+            background-color: #f18f05c4;
+            font-size: 0.9rem;
+            text-align: center;
+            width: 40%;
+            border-radius: 12px;
+            margin: 1rem auto;
+           text-align: left;
+            padding: 0.5rem;
+            font-weight: 700;
+            cursor: pointer;
+            position: fixed;
+            left: 20px;
+            top: 30px;
+            z-index: 1002;
+            color: #000;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        /* إضافة نمط يظهر على الشاشة عند التصوير */
+@media (max-width: 600px) {
+    body::after {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        pointer-events: none;
+        z-index: 9999;
+    }
+}
+
+h3{
+    font-size: 16px;
+    filter: grayscale(100%);
+    transition: filter 450ms ease;
+    cursor: pointer;
+    border-left: 8px solid violet;
+    border-right: 8px solid violet;
+    border-radius: 8px;
+    background-color: rgb(177, 170, 170);
+    color: #0088cc;
+}
+h3:is(:hover, :focus) {
+    filter: grayscale(0%) drop-shadow(0 8px 8px rgba(0, 0, 0, 0.5));
+    cursor: pointer;
+    color: #0f0bea;
+  }
+
+  h5{
+    font-weight: 800;
+    color: #71ef63;
+    font-size: 15px;
+    background-color: gray !important;
+    padding: 5px;
+    border-radius: 3px !important;
+    text-align: center;
+  }
+
+        
+    </style>
+    
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li>
+                <div class="decorated-name">Malek</div>
+            </li>
+            <li>
+                <a href="https://wa.me/0547395579" target="_blank" style="text-decoration: none; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold; background-color: #25D366; transition: background-color 0.3s ease, transform 0.3s ease;" onmouseover="this.style.transform='scale(1.1)'; this.style.backgroundColor='#000000';" onmouseout="this.style.transform='scale(1)'; this.style.backgroundColor='#25D366';"> واتس  </a>
+            </li>
+            <li>
+                <a href="https://t.me/mifrs4" target="_blank" style="text-decoration: none; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold; background-color: #0088cc; transition: background-color 0.3s ease, transform 0.3s ease;" onmouseover="this.style.transform='scale(1.1)'; this.style.backgroundColor='#000000';" onmouseout="this.style.transform='scale(1)'; this.style.backgroundColor='#0088cc';">  تليجرام </a>
+            </li>
+        </ul>
+    </nav>
+
+
+
+    <div class="content" style="background-image: url('https://th.bing.com/th/id/R.add97857c4d8ec33a7a62e4a0464d266?rik=IVE0WJJYi6M%2fCg&riu=http%3a%2f%2fimagess.net%2fwp-content%2fuploads%2f2017%2f02%2f3981.jpg&ehk=KS1rIbzTmA7CC13wLGFc2Z9ZLvZS3CLui9oGf7HzYIc%3d&risl=&pid=ImgRaw&r=0'); height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    box-sizing: border-box; ">
+    <div class="dropdown">
+        <select id="sectionSelect" onchange="showSection()">
+            <option value="section0">  إختار الموضوع من هنا &#128071; </option>
+<option value="section0" style="color: red; background-color: #5badeb;">  chapter 1  </option>
+<option value="section1">Explain what accounting is ?</option>
+<option value="section2">users of financial information: internal users and external users</option>
+<option value="section3">QUESTIONS</option>
+<option value="section4">Explain accounting standards and the measurement principles and assumptions and Forms of companie</option>
+<option value="section5">measurement principles and assumptions</option>
+<option value="section6">Three types of Forms of companies</option>
+<option value="section7">QUESTIONS</option>
+<option value="section8">The Basic Accounting Equation</option>
+<option value="section9">Assets - الاصول </option>
+<option value="section10">Liabilities - الالتزامات </option>
+<option value="section11">Equity - حقوق الملكية </option>
+<option value="section12">RETAINED EARNINGS - الارباح المرحلة </option>
+<option value="section13">QUESTIONS</option>
+<option value="section14">Transaction Analysis - تحليل المعاملات </option>
+<option value="section15">Softbyte SA purchases computer equipment for €7,000 cash</option>
+<option value="section16">Softbyte SA purchases for €1,600 from Mobile Solutions Company headsets and other computer accessories expected to last several months</option>
+<option value="section17">Softbyte SA receives €1,200 cash from customers for app development services it has performed</option>
+<option value="section18">Softbyte SA  receives a bill for €250 from Programming News for advertising on its website but  postpones payment until a later date</option>
+<option value="section19">Softbyte SA performs €3,500 of app development services for customers. The company receives cash of €1,500 from customers, and it bills the balance of €2,000 on account</option>
+<option value="section20">Softbyte SA pays the following 
+    expenses in cash for September: office rent €600, salaries and wages of employees €900, and utilities €200</option>
+<option value="section21">Softbyte SA pays its  €250 Programming News bill in cash. The company previously</option>
+<option value="section22">Softbyte SA receives 
+    €600 in cash from customers who had been billed for services (in Transaction 6)</option>
+<option value="section23">The corporation pays a dividend of €1,300 in 
+    cash to Ray and Barbara Neal, the shareholders of Softbyte SA</option>
+<option value="section24">income statement - قائمة الدخل </option>
+<option value="section25">retained earnings statement - قائمة الارباح المرحلة </option>
+<option value="section26">statement of financial position - قائمة المركز المالي</option>
+<option value="section27">Statement of Cash Flows - قائمة التدفقات النقدية </option>
+<option value="section28">QUESTIONS</option>
+<option value="section29">QUESTIONS ❓❓✅ or ❎   - chapter 1</option>
+<option value="section30">MULTIPLE CHOICE QUESTIONS - chapter 1</option>
+<option value="section31"></option>
+<option value="section32"></option>
+<option value="section33"></option>
+<option value="section34"></option>
+<option value="section35"></option>
+
+</select>
+</div>
+<h2 style="background-color: #222020; color:#f17b7b">  كورس مادة أساسيات المحاسبة جامعة جازان  </h2>
+<p style="text-align: center; background-color: #e8d8d8;">  الرجاء عدم مشاركة ملفاتي  </p>
+
+
+
+<div class="menu">  
+      
+    <button class="toggle-calculator" onclick="toggleCalculator()">إظهار/إخفاء الحاسبة</button>
+    <div class="overlay" id="overlay" onclick="toggleCalculator()"></div>
+    <div class="calculator" id="calculator">
+        <h2 style="color: #ff4b2b;">Malek calculator </h2>
+        <div class="calculator-display" id="display">0</div>
+        <div class="calculator-keys">
+            <button class="operator" onclick="clearDisplay()">C</button>
+            <button class="operator" onclick="appendSymbol('(')">(</button>
+            <button class="operator" onclick="appendSymbol(')')">)</button>
+            <button class="operator" onclick="appendOperator('/')">&divide;</button>
+            <button onclick="appendNumber(7)">7</button>
+            <button onclick="appendNumber(8)">8</button>
+            <button onclick="appendNumber(9)">9</button>
+            <button class="operator" onclick="appendOperator('*')">&times;</button>
+    <button onclick="appendNumber(4)">4</button>
+    <button onclick="appendNumber(5)">5</button>
+    <button onclick="appendNumber(6)">6</button>
+    <button class="operator" onclick="appendOperator('-')">-</button>
+    <button onclick="appendNumber(1)">1</button>
+    <button onclick="appendNumber(2)">2</button>
+    <button onclick="appendNumber(3)">3</button>
+    <button class="operator" onclick="appendOperator('+')">+</button>
+    <button onclick="appendNumber(0)">0</button>
+    <button onclick="appendDot()">.</button>
+    <button class="operator" onclick="appendOperator('**')">^</button>
+    <button class="operator" onclick="appendOperator('%')">%</button>
+    <button class="equal" onclick="calculate()">=</button>
+</div>
+</div>   
+</div>   
+
+
+
+<div class="chapter1">
+<div class="section" id="section1">
+<h3>Explain what accounting is and uses of accounting</h3>
+<ul>
+    <li>Accounting consists of three basic activities—it identifies, records, and 
+    communicates the economic events of an organization to interested users</li>
+    تتكون المحاسبة من ثلاثة أنشطة أساسية - فهي تحدد الأحداث الاقتصادية للمؤسسة وتسجلها وتبلغ بها للمستخدمين المهتمين            
+    <li>a company identifi es the economic 
+        events relevant to its business such as sale, purchase , Receive cash, payment cash, incurred Expense and performing services or sale goods </li>
+        تحديد الشركة الاقتصادية 
+        الأحداث ذات الصلة بأعمالها مثل البيع والشراء وتلقي النقد والدفع النقدي والمصروفات المتكبدة وأداء الخدمات أو بيع السلع
+    <li>it records those 
+        events in order to provide a history of its fi nancial activities , Recording consists of keeping a systematic, chronological diary of events, measured in 
+        monetary units. In recording,  also classifies and summarizes economic events (Journal entry)</li>
+        يسجل تلك 
+        الأحداث من أجل تقديم تاريخ لأنشطتها المالية ، يتكون التسجيل من الاحتفاظ بمذكرات منهجية وزمنية للأحداث ، تقاس في 
+        الوحدات النقدية. في التسجيل ، يصنف ويلخص أيضا الأحداث الاقتصادية (إدخال دفتر اليومية)
+    <li> communicates the collected information to interested users by means of accounting reports , The most common of these reports are called financial statements</li>
+    تقوم بنقل المعلومات المجمعة إلى المستخدمين المهتمين عبر تقارير المحاسبة, وأكثر هذه التقارير شيوعًا تُعرف باسم القوائم المالية
+    <li>A vital element in communicating economic events is the accountant’s abil
+        ity to analyze and interpret the reported information. Analysis involves use of 
+        ratios, percentages, graphs, and charts to highlight significant financial trends 
+        and relationships. Interpretation involves explaining the uses, meaning, and 
+        limitations of reported data</li>
+        أحد العناصر الحيوية في توصيل الأحداث الاقتصادية هو قدرة المحاسب على تحليل وتفسير المعلومات المبلغ عنها. يتضمن التحليل استخدام النسب والنسب المئوية والرسوم البيانية والرسوم البيانية لتسليط الضوء على الاتجاهات والعلاقات ذات الدلالة. يتضمن التفسير شرح استخدامات البيانات المبلغ عنها ومعناها وقيودها
+    <li>the accounting process includes the bookkeeping function. Bookkeeping usually involves only the recording of economic 
+        events. It is therefore just one part of the accounting process</li>
+        تتضمن عملية المحاسبة وظيفة مسك الدفاتر. عادة ما ينطوي مسك الدفاتر على تسجيل الأحداث الاقتصادية فقط. لذلك فهو مجرد جزء واحد من العملية المحاسبية
+    </ul>
+</div>
+
+
+<div class="section" id="section2">
+<h3>users of financial information: internal users and external users</h3>
+    
+    هناك مجموعتان عريضتان من مستخدمي المعلومات المالية  المستخدمون الداخليون والمستخدمون الخارجيون
+    <ul>
+    <li>Internal users of accounting information are managers who plan, organize, and 
+        run the business. These include marketing managers, production supervisors, 
+        finance directors, and company officers</li>
+        المستخدمون الداخليون للمعلومات المحاسبية هم المديرون الذين يخططون وينظمون ويديرون الأعمال. ويشمل ذلك مديري التسويق ومشرفي الإنتاج ومديري الشؤون المالية وموظفي الشركة
+    <li>internal users need detailed information 
+        on a timely basis</li>
+        يحتاج المستخدمون الداخليون إلى معلومات مفصلة في الوقت المناسب
+    <li>Managerial accounting provides internal reports to help users  make decisions about their companies</li>
+    توفر المحاسبة الإدارية تقارير داخلية لمساعدة المستخدمين على اتخاذ القرارات المتعلقة بشركاتهم
+    <li> External users are individuals and organizations outside a company who want 
+        financial information about the company. The two most common types of external users are investors and creditors</li>
+        المستخدمون الخارجيون هم أفراد ومؤسسات خارج الشركة يريدون معلومات مالية عن الشركة. النوعان الأكثر شيوعا من المستخدمين الخارجيين هما المستثمرون والدائنون
+    <li>Investors (owners) use accounting information to make decisions to buy, hold, or sell ownership shares of a company</li>
+    يستخدم المستثمرون (المالكون) المعلومات المحاسبية لاتخاذ قرارات شراء أو امتلاك أو بيع أسهم ملكية الشركة
+    <li>Creditors (such as suppliers and bankers) use accounting information to evaluate the risks of granting credit or lending money</li>
+    يستخدم الدائنون (مثل الموردين والمصرفيين) المعلومات المحاسبية لتقييم مخاطر منح الائتمان أو إقراض الأموال
+    <li>Financial accounting answers these questions. It provides economic and financial information for investors, creditors, and other external users</li>
+    المحاسبة المالية تجيب على هذه الأسئلة. يوفر معلومات اقتصادية ومالية للمستثمرين والدائنين والمستخدمين الخارجيين الآخرين
+</ul>
+</div>
+
+<div class="section" id="section3">
+<h3>QUESTIONS</h3>
+<li> The three steps in the accounting process are identification, recording, and communication <b>True</b></li>
+          الخطوات الثلاث في العملية المحاسبية هي تحديد العملية والتسجيل وتوصيل المعلومات للمستخدمين
+          <li>Bookkeeping encompasses all steps in the accounting process <b>False : Bookkeeping involves only the recording step</b></li>
+          يشمل مسك الدفاتر جميع الخطوات في العملية المحاسبية (خطأ) يتضمن مسك الدفاتر خطوة التسجيل فقط
+          <li>Accountants prepare, but do not interpret, financial reports <b>False : Accountants 
+          analyze and interpret information in reports as part of the communication step</b></li>
+          يعد المحاسبون التقارير المالية ، لكنهم لا يفسرون خطأ. يقوم المحاسبون بتحليل وتفسير المعلومات في التقارير كجزء من خطوة الاتصال  
+          <li>The two most common types of external users are investors and company officers <b>False. 
+              The two most common types of external users are investors and creditors</b></li>
+              النوعان الأكثر شيوعا من المستخدمين الخارجيين هما المستثمرون وموظفو الشركة . خطأ. النوعان الأكثر شيوعا من المستخدمين الخارجيين هما المستثمرون والدائنون
+          <li> Managerial accounting activities focus on reports for internal users <b>True</b></li>
+          تركز أنشطة المحاسبة الإدارية على التقارير للمستخدمين الداخليين
+          </ul>
+</div>
+
+<div class="section" id="section4">
+<h3>Explain accounting standards </h3>شرح المعايير المحاسبية 
+<ul>
+    <li>there are two primary accounting standard-setting bodies—the International Accounting Standards Board (IASB) and the 
+    Financial Accounting Standards Board (FASB)</li>
+    هناك هيئتان رئيسيتان لوضع معايير المحاسبة - مجلس معايير المحاسبة الدولية   ومجلس معايير المحاسبة المالية 
+    <li>International Financial Reporting Standards 
+        (IFRS). IFRSs are determined by the IASB</li>
+        المعايير الدولية لإعداد التقارير المالية  يتم تحديد المعايير الدولية لإعداد التقارير المالية من قبل مجلس معايير المحاسبة الدولية
+    <li>The IASB is headquartered in  London</li>
+        يقع المقر الرئيسي لمجلس معايير المحاسبة الدولية في لندن
+    <li>Most companies in the United States follow standards issued by the FASB, referred to as 
+    generally accepted accounting principles (GAAP)</li>
+    تتبع معظم الشركات في الولايات المتحدة المعايير الصادرة عن مجلس معايير المحاسبة المالية  ، والتي يشار إليها باسم مبادئ المحاسبة المقبولة عموما 
+    </ul>
+</div>
+
+
+<div class="section" id="section5">
+    <h3>measurement principles and assumptions</h3>
+    مبادئ وافتراضات القياس
+    <ul>
+    <li> IFRS generally uses one of two measurement principles, the historical cost principle or the fair value principle</li>
+    تستخدم المعايير الدولية لإعداد التقارير المالية عموما أحد مبدأي القياس ، مبدأ التكلفة التاريخية أو مبدأ القيمة العادلة
+    <li>Relevance means that financial information is capable of making a difference in a decision</li>
+    الملائمة :  تعني أن المعلومات المالية قادرة على إحداث فرق في القرار
+    <li>Faithful representation means that the numbers and descriptions match what really existed or happened—they are factual</li>
+    التمثيل الصادق : يعني أن الأرقام والأوصاف تتطابق مع ما كان موجودا بالفعل أو حدث - فهي واقعية
+    <li>The historical cost principle (or cost principle) dictates that companies record 
+        assets at their cost. This is true not only at the time the asset is purchased, but 
+        also over the time the asset is held</li>
+        يملي مبدأ التكلفة التاريخية (أو مبدأ التكلفة) أن تسجل الشركات الأصول على بتكلفتها. هذا صحيح ليس فقط في وقت شراء الأصل ، ولكن أيضا خلال وقت الاحتفاظ بالأصل
+    <li> The fair value principle states that assets and liabilities should be reported at 
+        fair value (the price received to sell an asset or settle a liability)</li>
+        ينص مبدأ القيمة العادلة على أنه يجب الإبلاغ عن الأصول والمطلوبات بالقيمة العادلة (السعر المستلم لبيع أصل أو تسوية التزام)
+    <li>Fair value information may be more useful than historical cost for certain types of assets and 
+        liabilities</li>
+        قد تكون معلومات القيمة العادلة أكثر فائدة من التكلفة التاريخية لأنواع معينة من الأصول والمطلوبات
+    <li> Assumptions provide a foundation for the accounting process. Two main assumptions are the monetary unit assumption and the economic entity assumption</li>
+    توفر الافتراضات أساسا لعملية المحاسبة. هناك افتراضان رئيسيان هما افتراض الوحدة النقدية وافتراض الكيان الاقتصادي
+    <li>The monetary unit assumption requires that companies include in the accounting records only transaction data that can be expressed in money terms. This assumption enables accounting to quantify (measure) economic events. The monetary unit assumption is vital to applying the historical cost principle</li>
+    يتطلب افتراض الوحدة النقدية أن تدرج الشركات في سجلات المحاسبة فقط بيانات المعاملات التي يمكن التعبير عنها من الناحية النقدية. يمكن هذا الافتراض المحاسبة من تحديد (قياس) الأحداث الاقتصادية. افتراض الوحدة النقدية أمر حيوي لتطبيق مبدأ التكلفة التاريخية 
+    <li>The economic entity assumption requires that the activities of the entity be kept separate 
+    and distinct from the activities of its owner and all other economic entities</li>
+    يتطلب افتراض الكيان الاقتصادي أن تظل أنشطة المنشأة منفصلة ومتميزة عن أنشطة مالكها وجميع الكيانات الاقتصادية الأخرى
+    </ul>
+</div>
+
+
+<div class="section" id="section6">
+    <li>Three types of Forms of companies </li>
+    هناك ثلاث انواع من الشركات 
+    <ul>
+    <li>1-  PROPRIETORSHIP A business owned by one person , Usually only a relatively small amount of money (capital) is necessary to start in business as a proprietorship. The owner (proprietor) receives any profits, suffers any losses, and is personally liable for all debts of the business</li>
+    الشركات الفردية :  شركة يملكها شخص واحد عادة ما يكون هناك حاجة إلى مبلغ صغير نسبيا من المال (رأس المال) لبدء العمل كملكية. يتلقى المالك (المالك) أي نفقات ، ويعاني من أي خسائر ، ويكون مسؤولا شخصيا عن جميع ديون الشركة
+    <li>2- PARTNERSHIP A business owned by two or more persons associated as partners , In most respects a partnership is like a proprietorship except that more than one owner is involved , Like a proprietorship, for accounting purposes 
+    the partnership transactions must be kept separate from the personal activities of the partners</li>
+    شركات الاشخاص :  شركة مملوكة من قبل شخصين أو أكثر مرتبطين كشركاء في معظم النواحي ، تكون الشراكة مثل الملكية باستثناء مشاركة أكثر من مالك واحد مثل الملكية ، لأغراض المحاسبة ، يجب أن تظل معاملات الشراكة منفصلة عن الأنشطة الشخصية للشركاء
+    <li>3- CORPORATION A business organized as a separate legal entity under corporation law and having ownership divided into transferable shares , The holders of the shares (shareholders) enjoy limited liability ,Shareholders may transfer  all or part of their ownership shares to other investors at any time ,  the corporation enjoys an unlimited life</li>
+    شركات المساهمة : شركة منظمة ككيان قانوني منفصل بموجب قانون الشركات وتنقسم ملكيتها إلى أسهم قابلة للتحويل يتمتع حاملو الأسهم (المساهمون) بمسؤولية محدودة يجوز للمساهمين نقل كل أو جزء من أسهم ملكيتهم لمستثمرين آخرين في أي وقت الشركة ، تتمتع شركات الاموال بحياة غير محدودة
+    </ul>
+</div>
+
+<div class="section" id="section7">
+<h3>QUESTIONS</h3>
+<ul>
+    <li>Convergence refers to efforts to reduce differences between IFRS and U.S. GAAP <b>True</b></li>
+    يشير التقارب إلى الجهود المبذولة للحد من الاختلافات بين المعايير الدولية لإعداد التقارير المالية ومبادئ المحاسبة المقبولة عموما في الولايات المتحدة
+    <li>The primary accounting standard-setting body headquartered in London is the International Accounting Standards Board (IASB) . <b>True</b></li>
+    الهيئة الرئيسية لوضع معايير المحاسبة ومقرها في لندن هي مجلس معايير المحاسبة الدولية 
+    <li>The historical cost principle dictates that companies record assets at their cost. In later periods, however, the fair value of the asset must be used if fair value is higher than its cost . <b>False. The historical cost principle dictates that companies record assets at their cost. Under the historical cost principle, the company must also use cost in later periods</b></li>
+    يملي مبدأ التكلفة التاريخية أن تسجل الشركات الأصول على نفقتها. ومع ذلك ، في فترات لاحقة ، يجب استخدام القيمة العادلة للأصل إذا كانت القيمة العادلة أعلى من تكلفتها. خطأ. يملي مبدأ التكلفة التاريخية أن تسجل الشركات الأصول على نفقتها. بموجب مبدأ التكلفة التاريخية ، يجب على الشركة أيضا استخدام التكلفة في فترات لاحقة
+    <li>Relevance means that financial information matches what really happened; the information is factual . <b>False. Faithful representation means that fi nancial 
+        information matches what really happened; the information is factual</b></li>
+        الصلة تعني أن المعلومات المالية تتطابق مع ما حدث بالفعل. المعلومات هي وقائعية . خطأ. التمثيل المخلص يعني أن المعلومات المالية تتطابق مع ما حدث بالفعل. المعلومات واقعية
+        <li>A business owner’s personal expenses must be separated from expenses of the business to comply with accounting’s economic entity assumption <b>True</b></li>
+        يجب فصل النفقات الشخصية لصاحب العمل عن نفقات العمل للامتثال لافتراض الكيان الاقتصادي للمحاسبة
+    </ul>
+</div>
+
+<div class="section" id="section8">
+<h3>The Basic Accounting Equation</h3>
+المعادلة المحاسبية 
+<ul style="background-color: #f09e9e;">
+    <li>Assets = liabilities + Equity </li>
+    الاصول تساوي الالتزامات زائد حقوق الملكية 
+    <li>Assets are the resources a business owns</li>
+    الأصول هي الموارد التي تمتلكها الشركة
+    <li>Liabilities and equity are the rights or claims against these resources</li>
+    الالتزامات وحقوق الملكية هي الحقوق أو المطالبات ضد هذه الموارد
+    <li>liabilities : Claims of those to whom the company owes money (creditors) </li>
+    الالتزامات : مطالبات أولئك الذين تدين لهم الشركة بالمال (الدائنين)
+    <li>equity : Claims of owners </li>
+    حقوق الملكية : مطالبات المالكين
+    <li>This relationship is the basic accounting equation. Assets must equal the sum of liabilities and equity</li>
+    هذه العلاقة هي المعادلة المحاسبية الأساسية. يجب أن تساوي الأصول مجموع الخصوم وحقوق الملكية
+    <li>The accounting equation applies to all economic entities regardless of size,  nature of business, or form of business organization</li>
+    تنطبق المعادلة المحاسبية على جميع الكيانات الاقتصادية بغض النظر عن حجم أو طبيعة العمل أو شكل تنظيم الأعمال
+    <li>The equation provides the underlying framework for recording and 
+    summarizing economic events</li>
+    توفر المعادلة الإطار الأساسي لتسجيل وتلخيص الأحداث الاقتصادية
+    </ul>
+</div>
+
+<div class="section" id="section9">
+<h3>Assets - الاصول </h3>
+<ul>
+    <li>assets are resources a business owns. The business uses its 
+         assets in carrying out such activities as production and sales. The common characteristic possessed by all assets is the capacity to provide future services or benefits. In a business, that service potential or future economic benefit eventually results in cash inflows (receipts)</li>
+         الأصول هي الموارد التي تمتلكها الشركة. تستخدم الشركة أصولها في تنفيذ أنشطة مثل الإنتاج والمبيعات. السمة المشتركة التي تمتلكها جميع الأصول هي القدرة على تقديم الخدمات المستقبلية أو الفوائد. في الأعمال التجارية ، تؤدي هذه الخدمة المحتملة أو المنفعة الاقتصادية المستقبلية في النهاية إلى تضخم نقدي (إيصالات)
+    </ul>
+    <div class="table-container">
+    <table>
+         <tr>
+              <th>accounts</th>
+              <th>classified</th>
+         </tr>
+         <tr>
+              <td>land - الارض </td>
+              <td>assets - اصول </td>
+         </tr>
+         <tr>
+              <td>Equipment - معدات </td>
+              <td>assets - اصول</td>
+         </tr>
+         <tr>
+              <td>furniture - اثاث</td>
+              <td>assets - اصول</td>
+         </tr>
+         <tr>
+              <td>machine - الالات </td>
+              <td>assets - اصول</td>
+         </tr>
+         <tr>
+              <td>Truck - سيارات نقل</td>
+              <td>assets - اصول</td>
+         </tr>
+         <tr>
+              <td>supplies - مهمات </td>
+              <td>assets - اصول</td>
+         </tr>
+         <tr>
+              <td>inventory - مخزون</td>
+              <td>assets - اصول</td>
+         </tr>
+         <tr>
+              <td>Accounts Receivable - المدينون والعملاء</td>
+              <td>assets</td>
+         </tr>
+         <tr>
+              <td>interest Receivable - الفائدة المستحقة ع العملاء</td>
+              <td>assets - اصول</td>
+         </tr>
+         <tr>
+              <td>investments - استثمارات</td>
+              <td>assets - اصول</td>
+         </tr>
+         <tr>
+              <td>prepaid insurance - تامين مقدم</td>
+              <td>assets - اصول</td>
+         </tr>
+         <tr>
+              <td>prepaid rent - ايجار مقدم </td>
+              <td>assets - اصول</td>
+         </tr>
+         <tr>
+              <td>cash - النقدية</td>
+              <td>assets - اصول</td>
+         </tr>
+    </table></div>
+</div>
+
+<div class="section" id="section10">
+<h3>Liabilities - الالتزامات </h3>
+<ul>
+    <li>Liabilities are claims against assets—that is, existing debts and obligations. Businesses of all sizes usually borrow money and purchase merchandise on credit</li>
+    الالتزامات هي مطالبات ضد الأصول - أي الديون والالتزامات القائمة. عادة ما تقترض الشركات من جميع الأحجام الأموال وتشتري البضائع عن طريق الائتمان
+    </ul>
+    <div class="table-container">
+    <table>
+         <tr>
+              <th>accounts - الحسابات</th>
+              <th>classified - التصنيف</th>
+         </tr>
+         <tr>
+              <td>accounts payable - الدائنون والموردون</td>
+              <td>liabilities - التزامات </td>
+         </tr>
+         <tr>
+              <td>Note payable - ورقة الدفع </td>
+              <td>liabilities - التزامات</td>
+         </tr>
+         <tr>
+              <td>interest payable - الفائدة المستحقة </td>
+              <td>liabilities - التزامات</td>
+         </tr>
+         <tr>
+              <td>salaries  payable - الرواتب المستحقة</td>
+              <td>liabilities - التزامات</td>
+         </tr>
+         <tr>
+              <td>rent payable - ايجار مستحق</td>
+              <td>liabilities - التزامات</td>
+         </tr>
+         <tr>
+              <td>loans - القروض</td>
+              <td>liabilities - التزامات</td>
+         </tr>
+         <tr>
+              <td>Bonds - السندات </td>
+              <td>liabilities - التزامات </td>
+         </tr>
+         <tr>
+              <td>unearned revenue - ايراد مقدم </td>
+              <td>liabilities - التزامات</td>
+         </tr>
+    </table></div>
+</div>
+
+<div class="section" id="section11">
+<h3>Equity - حقوق الملكية </h3>
+<ul>
+    <li>Equity = Assets - liabilities </li>
+    حقوق الملكية تساوي الاصول ناقص الالتزامات
+    <li>Equity = share capital - Dividends + revenue - expenses</li>
+    حقوق الملكية تساوي راس المال ناقص توزيعات الارباح زائد الايرادات ناقص المصروفات
+    <li>The ownership claim on a company’s total assets is equity</li>
+    المطالبة بالملكية على إجمالي أصول الشركة هي حقوق الملكية
+    <li>It is often referred to as  residual equity—that is, the equity “left over” after creditors’ claims are satisfied</li>
+    وغالبا ما يشار إليها باسم حقوق الملكية المتبقية - أي حقوق الملكية "المتبقية" بعد استيفاء مطالبات الدائنين.
+    <li>Equity generally consists of (1) share capital—ordinary and (2) retained 
+         earnings</li>
+         تتكون حقوق الملكية بشكل عام من (1) رأس المال - العادي و (2) الأرباح المحتجزة
+    <li>retained earnings = revenue - expenses - Dividends </li>
+    الارباح المرحلة تساوي الايرادات ناقص المصروفات ناقص توزيعات الارباح 
+    <li>Share capital—ordinary is the term used to describe the amounts paid in by shareholders for the ordinary shares they purchase</li>
+    رأس المال العادي هو المصطلح المستخدم لوصف المبالغ التي يدفعها المساهمون مقابل الأسهم العادية التي يشترونها
+    </ul>
+</div>
+
+<div class="section" id="section12">
+<h3>RETAINED EARNINGS - الارباح المرحلة </h3>
+<ul>
+    <li>Retained earnings is determined by three items: revenues, expenses, and 
+         dividends</li>
+         يتم تحديد الأرباح المحتجزة من خلال ثلاثة بنود: الإيرادات والمصروفات وتوزيعات الأرباح
+    <li>REVENUES Revenues are the gross increases in equity resulting from business activities entered into for the purpose of earning income</li>
+    الإيرادات الإيرادات هي الزيادات الإجمالية في حقوق الملكية الناتجة عن الأنشطة التجارية المبرمة لغرض كسب الدخل
+    <li>Revenues usually result in an increase in an asset</li>
+    عادة ما تؤدي الإيرادات إلى زيادة في الأصل
+    <li style="color: red;"> Revenue increases Equity</li>
+    الايرادات تزود من حقوق الملكية 
+    </ul>
+    <div class="table-container">
+         <table>
+              <tr>
+                   <th>accounts - الحسابات</th>
+                   <th>classified - التصنيف</th>
+              </tr>
+              <tr>
+                   <td>revenue - الايراد</td>
+                   <td>Revenues - الايرادات</td>
+              </tr>
+              <tr>
+                   <td>service revenue - ايراد الخدمات</td>
+                   <td>Revenues - الايرادات</td>
+              </tr>
+              <tr>
+                   <td>sales revenue - ايراد المبيعات</td>
+                   <td>Revenues - الايرادات</td>
+              </tr>
+              <tr>
+                   <td>rent revenue - ايراد الايجار</td>
+                   <td>Revenues - الايرادات</td>
+              </tr>
+              <tr>
+                   <td>interest revenue - ايراد الفائدة</td>
+                   <td>Revenues - الايرادات</td>
+              </tr>
+              <tr>
+                   <td>divided revenue - ايرادات توزيعات الارباح</td>
+                   <td>Revenues - الايرادات</td>
+              </tr>
+              <tr>
+                   <td>performing services - تقديم خدمات</td>
+                   <td>Revenues - الايرادات</td>
+              </tr>
+              <tr>
+                   <td>selling merchandise - بيع المنتجات والسلع</td>
+                   <td>Revenues - الايرادات </td>
+              </tr>
+              
+         </table>
+    </div>
+    <ul>
+    <li style="color: purple;">Expenses are the cost of assets consumed or services used in the 
+         process of earning revenue. They are decreases in equity that result from 
+         operating the business</li>
+         المصروفات هي تكلفة الأصول المستهلكة أو الخدمات المستخدمة في عملية كسب الإيرادات. إنها انخفاضات في حقوق الملكية ناتجة عن تشغيل الأعمال
+    <li style="color: red;"> Expenses deducted (decreases) Equity</li>
+    المصروفات تقل من حقوق الملكية 
+    </ul>
+    <div class="table-container">
+         <table>
+              <tr>
+                   <th>Accounts - الحسابات</th>
+                   <th>classified - التصنيف</th>
+              </tr>
+              <tr>
+                   <td>cost of goods sold - تكلفة البضاعة المباعة</td>
+                   <td>Expenses - المصروفات</td>
+              </tr>
+              <tr>
+                   <td>salaries and wages Expense - مصروف الرواتب والاجور</td>
+                   <td>Expenses - المصروفات</td>
+              </tr>
+              <tr>
+                   <td>rent Expense - مصروف الايجار</td>
+                   <td>Expenses - المصروفات</td>
+              </tr>
+              <tr>
+                   <td>supplies Expense - مصروف المهمات</td>
+                   <td>Expenses - المصروفات</td>
+              </tr>
+              <tr>
+                   <td>depreciation Expense - مصروف الاهلاك </td>
+                   <td>Expenses - المصروفات</td>
+              </tr>
+              <tr>
+                   <td>freight-out  - مصروف نقل للخارج</td>
+                   <td>Expenses - المصروفات </td>
+              </tr>
+              <tr>
+                   <td>advertising  Expense - مصروف الاعلان  </td>
+                   <td>Expenses - المصروفات</td>
+              </tr>
+              <tr>
+                   <td>selling Expense - المصروفات البيعية</td>
+                   <td>Expenses - المصروفات </td>
+              </tr>
+              <tr>
+                   <td>adminstrative Expense - المصروفات الادارية</td>
+                   <td>Expenses - المصروفات</td>
+              </tr>
+              <tr>
+                   <td>insurance  Expense - مصروف التامين</td>
+                   <td>Expenses - المصروفات</td>
+              </tr>
+              <tr>
+                   <td>utilities Expense - مصروف المرفقات </td>
+                   <td>Expenses - المصروفات</td>
+              </tr>
+              <tr>
+                   <td>General Expense - المصروفات العامة </td>
+                   <td>Expenses - المصروفات </td>
+              </tr>
+              <tr>
+                   <td>interest Expense - مصروف الفايدة</td>
+                   <td>Expenses - المصروفات</td>
+              </tr>
+              <tr>
+                   <td>repairs Expense - مصروفات الصيانة</td>
+                   <td>Expenses - المصروفات </td>
+              </tr>
+              <tr>
+                   <td>operating expenses - المصروفات التشغيلية</td>
+                   <td>Expenses - المصروفات</td>
+              </tr>
+         </table>
+    </div>
+    <ul>
+    <li>Dividends : The distribution of cash or other assets to shareholders</li>
+    توزيعات الارباح : توزيع النقد أو الأصول الأخرى على المساهمين
+    <li style="color: red;"> Dividends deducted (decreases) Equity</li>
+    توزيعات الارباح تقلل من حقوق الملكية 
+    <li style="color: red;">Dividends Not Expenses</li>
+    توزيعات الارباح ليست مصروفات 
+    <li style="color: chocolate;"> Net income : Revenues exceeds expenses</li>
+    صافي الدخل : الايرادات تزيد عن المصروفات 
+    <li style="color: chocolate;"> Net loss : Expenses exceeds revenues</li>
+    صافي الخسارة : المصروفات تزيد عن الايرادات 
+    </ul>
+</div>
+
+<div class="section" id="section13">
+<h3>QUESTIONS</h3>
+<ul>
+    <li style="color: red;">Classify the following items as issuance of shares (I), dividends (D), revenues (R), or 
+         expenses (E). Then indicate whether each item increases or decreases equity</li>
+    <li> (1) Rent Expense : <b>Rent Expense is an expense (E); it decreases equity</b></li>
+    <li>(2) Service Revenue : <b>Service Revenue is a revenue  (R); it increases equity. </b></li>
+    <li>(3) Dividends : <b>Dividends is a distribution to shareholders (D); it decreases equity.</b></li>
+    <li>(4) Salaries and Wages Expense : <b>Salaries and Wages Expense is an expense (E); it decreases equity</b></li>
+    </ul>
+</div>
+
+
+<div class="section" id="section14">
+<h3>Transaction Analysis - تحليل المعاملات </h3>
+<p style="color: rgb(239, 105, 105);">On September 1, 2017, they invest €15,000 cash in the business in exchange for €15,000 of ordinary shares</p>
+في ا سبتمبر 2017 المساهمين استثمروا ف شركة بقيمة 15000 ودفعوا القيمة كاش للشركة مقابل اسهم عادية , بمعنى المساهمين اشتروا اسهم من الشركة ودفعوا القيمة كاش 
+<div class="table-container">
+<table>
+     <tr>
+          <th>Assets</th>
+          <th>=</th>
+          <th>Liabilities</th>
+          <th>+</th>
+          <th>Equity</th>
+     </tr>
+     <tr>
+          <td>+cash 15,000</td>
+          <td>=</td>
+          <td></td>
+          <td>+</td>
+          <td>+share capital-ordinary 15,000</td>
+     </tr>
+</table>
+</div>
+<p> Basic Analysis : The asset Cash increases €15,000, and equity identified as Share Capital—Ordinary increases €15,000</p>
+تحليل المعاملة : الاصول زادت اللي هيا الكاش بقيمة 15000 نتيجة استلام فلوس من المساهمين وايضا الاسهم تعبر عن حقوق الملكية ف زادت حقوق الملكية نتيجة امتلاك المساهمين اسهم بقيمة 15000
+
+</div>
+
+
+<div class="section" id="section15">
+<h3>Softbyte SA purchases computer equipment for €7,000 cash</h3>
+<p style="color: rgb(238, 101, 101);">Softbyte SA purchases computer equipment for €7,000 cash </p>
+الشركة اشتريت معدات كمبيوتر ودفعة القيمة كاش
+<div class="table-container">
+     <table>
+          <tr>
+               <th colspan="2">Assets</th>
+               <th>=</th>
+               <th>Liabilities</th>
+               <th>+</th>
+               <th>Equity</th>
+          </tr>
+          <tr>
+               <td>-cash 7,000</td>
+               <td>+Equipment 7,000</td>
+               <td>=</td>
+               <td></td>
+               <td>+</td>
+               <td></td>
+          </tr>
+     </table>
+     </div>
+     <p> Basic Analysis : The asset Cash decreases €7,000, and the asset Equipment increases €7,000 </p>
+     تحليل المعاملة : سداد الشركة معناه نقص الكاش اي نقص الاصول بقيمة 7000 وشراء الشركة معدات يزود الاصول بقيمة 7000 لان المعدات من ضمن الاصول 
+</div>
+
+<div class="section" id="section16">
+<h3>Softbyte SA purchases for €1,600 from Mobile Solutions Company headsets and other computer accessories expected to last several months</h3>
+<p style="color: rgb(241, 117, 117)"> Softbyte SA purchases for €1,600 from Mobile Solutions Company headsets and other computer accessories expected to last several months </p>
+الشركة اشترت مستلزمات للهواتف بقيمة 1600 بالاجل لانه ما ذكر هنا الدفع كاش 
+<div class="table-container">
+     <table>
+          <tr>
+               <th>Assets</th>
+               <th>=</th>
+               <th>Liabilities</th>
+               <th>+</th>
+               <th>Equity</th>
+          </tr>
+          <tr>
+               
+               <td>+supplies 1,600</td>
+               <td>=</td>
+               <td>+Accounts payable 1,600</td>
+               <td>+</td>
+               <td></td>
+          </tr>
+     </table>
+     </div>
+     <p>Basic Analysis : The asset Supplies increases €1,600, and the liability Accounts Payable increases €1,600 </p>
+شراء الشركة مستلزمات يزود الاصول لان المستلزمات من ضمن الاصول بقيمة 1600 , وعدم سداد الشركة لقيمة الشراء يزود ع الشركة الالتزام هو الدائنون او الموردون بقيمة 1600
+</div>
+
+<div class="section" id="section17">
+<h3>Softbyte SA receives €1,200 cash from customers for app development services it has performed</h3>
+<p style="color: rgb(245, 118, 118);"> Softbyte SA receives €1,200 cash from customers for app development services it has performed </p>
+الشركة استلمت فلوس من العملاء مقابل تقديم خدمات 
+<div class="table-container">
+     <table>
+          <tr>
+               <th>Assets</th>
+               <th>=</th>
+               <th>Liabilities</th>
+               <th>+</th>
+               <th>Equity</th>
+          </tr>
+          <tr>
+               
+               <td>+cash 1,200</td>
+               <td>=</td>
+               <td></td>
+               <td>+</td>
+               <td>+service revenue 1,200</td>
+          </tr>
+     </table>
+     </div>
+     <p> Basic  Analysis : The asset Cash increases €1,200, and equity increases €1,200 due to Service Revenue </p>
+     تحليل لمعادلة : زيادة الاصول ( الكاش) بقيمة 1200 , وزيادة حقوق الملكية ( ايراد الخدمات) بقيمة 1200
+</div>
+
+<div class="section" id="section18">
+<h3>Softbyte SA  receives a bill for €250 from Programming News for advertising on its website but  postpones payment until a later date</h3>
+<p style="color: rgb(245, 118, 118);">Softbyte SA  receives a bill for €250 from Programming News for advertising on its website but  postpones payment until a later date. </p>
+استلمت فاتورة اعلان ولكن الشركة لم تدفع 
+<div class="table-container">
+     <table>
+          <tr>
+               <th>Assets</th>
+               <th>=</th>
+               <th>Liabilities</th>
+               <th>+</th>
+               <th>Equity</th>
+          </tr>
+          <tr>
+               
+               <td></td>
+               <td>=</td>
+               <td>+accounts payable 250</td>
+               <td>+</td>
+               <td>- Advertising Expense 250</td>
+          </tr>
+     </table>
+     </div>
+<p> Basic Analysis : The liability Accounts Payable increases €250, and equity decreases €250 due to Advertising 
+Expense </p>
+تحليل المعاملة : زيادة الالتزام ع الشركة لانها م تدفع قيمة الاعلان بقيمة 250 , ونقص حقوق الملكية ( مصروف الاعلان ) بقيمة 250 لان المصروفات تقلل من حقوق الملكية 
+</div>
+
+<div class="section" id="section19">
+<h3>Softbyte SA performs €3,500 of app development services for customers. The company receives cash of €1,500 from customers, and it bills the balance of €2,000 on account</h3>
+<p style="color: rgb(236, 109, 109);"> Softbyte SA performs €3,500 of app development services for customers. The company receives cash of €1,500 from customers, and it bills the balance of €2,000 on account. </p>
+الشركة قدمت خدمات(ايراد) بقيمة 3500 واستلمت 1500 نقدي والباقي 2000 عند العميل لسه ما دفعهمش
+<div class="table-container">
+     <table>
+          <tr>
+               <th colspan="2">Assets</th>
+               <th>=</th>
+               <th>Liabilities</th>
+               <th>+</th>
+               <th>Equity</th>
+          </tr>
+          <tr>
+               
+               <td>+cash 1,500</td>
+               <td>+Accounts receivable 2,000</td>
+               <td>=</td>
+               <td></td>
+               <td>+</td>
+               <td>+service revenue 3,500</td>
+          </tr>
+     </table>
+     </div>
+<p> Basic Analysis : Three specific items are affected: The asset Cash increases €1,500, the asset Accounts Receivable increases €2,000, and equity increases €3,500 due to Service Revenue</p>
+زيادة الاصول ( الكاش) لان الشركة استلمت كاش بقيمة 1500 وزيادة الاصول ( العملاء) لان الشركة باقي لها فلوس عند العملاء بقيمة 2000 , وزيادة حقوق الملكية ( ايراد الخدمات ) بقيمة 3500 , ايراد الخدمات يزود حقوق الملكية   
+</div>
+
+
+<div class="section" id="section20">
+<h3>Softbyte SA pays the following 
+    expenses in cash for September: office rent €600, salaries and wages of employees €900, and utilities €200</h3>
+    <p style="color: rgb(238, 114, 114);"> Softbyte SA pays the following 
+        expenses in cash for September: office rent €600, salaries and wages of employees €900, and utilities €200. </p>
+        تكبدت الشركة مصاريف ايجار ورواتب ومصروفات مرفقات ( مياه وكهرباء ) ودفعة القيمة كاش 
+        <div class="table-container">
+             <table>
+                  <tr>
+                       <th>Assets</th>
+                       <th>=</th>
+                       <th>Liabilities</th>
+                       <th>+</th>
+                       <th colspan="3">Equity</th>
+                  </tr>
+                  <tr>
+                       
+                       <td>-cash 1,700</td>
+                       <td>=</td>
+                       <td></td>
+                       <td>+</td>
+                       <td>-office rent 600</td>
+                       <td>-salaries expense 900 </td>
+                       <td>-utilities expense 200</td>
+                  </tr>
+             </table>
+             </div>
+        <p> Basic Analysis : The asset Cash decreases €1,700, and equity decreases €1,700 due to the following specific 
+        expenses: Rent Expense, Salaries and Wages Expense, and Utilities Expense. </p>
+        نقص الاصول ( الكاش ) نتيجة سداد الشركة للمصروفات بقيمة اجمالي المصروفات 1700 , ونقص حقوق الملكية ( المصروفات ) بفيمة 1700 , المصروفات تقلل من حقوق الملكية 
+</div>
+
+<div class="section" id="section21">
+<h3>Softbyte SA pays its  €250 Programming News bill in cash. The company previously</h3>
+<p style="color: rgb(239, 96, 96);"> Softbyte SA pays its  €250 Programming News bill in cash. The company previously </p>
+الشركة دفعت قيمة الفاتورة السابقة اللي كانت عليها بقيمة 250
+<div class="table-container">
+     <table>
+          <tr>
+               <th>Assets</th>
+               <th>=</th>
+               <th>Liabilities</th>
+               <th>+</th>
+               <th>Equity</th>
+          </tr>
+          <tr>
+               
+               <td>-cash 250</td>
+               <td>=</td>
+               <td>-Accounts payable 250</td>
+               <td>+</td>
+               <td></td>
+              
+          </tr>
+     </table>
+     </div>
+<p> Basic Analysis : This cash payment “on account” decreases the asset Cash by €250 and also decreases the liability 
+     Accounts Payable by €250. </p>
+تحليل المعاملة : نقص الاصول ( الكاش ) نتيجة السداد بقيمة 250 , وتقل الالتزامات ( الدائنون) بقيمة 250 نتيجة سداد الشركة المستحق عليها 
+</div>
+
+<div class="section" id="section22">
+<h3>Softbyte SA receives 
+    €600 in cash from customers who had been billed for services (in Transaction 6)</h3>
+    <p style="color: rgb(244, 102, 102);">Softbyte SA receives 
+        €600 in cash from customers who had been billed for services (in Transaction 6). </p>
+   الشركة استلمت كاش بقيمة 600 من العملاء 
+   <div class="table-container">
+        <table>
+             <tr>
+                  <th colspan="2">Assets</th>
+                  <th>=</th>
+                  <th>Liabilities</th>
+                  <th>+</th>
+                  <th>Equity</th>
+             </tr>
+             <tr>
+                  
+                  <td>+cash 600</td>
+                  <td>-Accounts Receivable 600</td>
+                  <td>=</td>
+                  <td></td>
+                  <td>+</td>
+                  <td></td>
+                 
+             </tr>
+        </table>
+        </div>
+   <p> Basic Analysis : The asset Cash increases €600, and the asset Accounts Receivable decreases €600. </p>
+   تحليل المعاملة : استلام الشركة كاش يزود الاصول بقيمة 600 , واستلمت من العملاء اذن رصيد العملاء هينقص ب 600 والعملاء من ضمن الاصول 
+</div>
+
+<div class="section" id="section23">
+<h3>The corporation pays a dividend of €1,300 in 
+    cash to Ray and Barbara Neal, the shareholders of Softbyte SA</h3>
+    <p style="color: rgb(229, 115, 115);">The corporation pays a dividend of €1,300 in 
+        cash to Ray and Barbara Neal, the shareholders of Softbyte SA.</p>
+        الشركة دفعت توزيعات ارباح للمساهمين بقيمة 1300
+        <div class="table-container">
+            <table>
+                 <tr>
+                      <th>Assets</th>
+                      <th>=</th>
+                      <th>Liabilities</th>
+                      <th>+</th>
+                      <th>Equity</th>
+                 </tr>
+                 <tr>
+                      
+                      <td>-cash 1,300</td>
+                      <td>=</td>
+                      <td></td>
+                      <td>+</td>
+                      <td>-Dividend 1,300</td>
+                     
+                 </tr>
+            </table>
+            </div>
+       <p> Basic Analysis : The asset Cash decreases €1,300, and equity decreases €1,300 due to dividends. </p>
+       تحليل المعاملة : سداد الشركة او دفع الشركة يقلل من الكاش اي الاصول تقل ب 1300 , وتوزيعات الارباح تقلل من حقوق الملكية بقيمة 1300
+</div>
+
+<div class="section" id="section24">
+<h3>income statement - قائمة الدخل  🌄🌄</h3>
+<p style="color: blueviolet;"> presents the revenues and expenses and resulting net income or net loss for a specifi c period of time</p>
+يعرض الإيرادات والمصروفات وصافي الدخل الناتج أو صافي الخسارة لفترة زمنية محددة
+<p style="color: blueviolet;">The income statement reports the success or profi tability of the company’s operations over a specifi c period of time</p>
+بيان الدخل تقارير نجاح أو سلامة عمليات الشركة على مدى فترة زمنية محددة
+<p style="color: blueviolet;">The income statement lists revenues fi rst, followed by expenses. Then, the statement shows net income (or net loss)</p>
+يسرد بيان الدخل الإيرادات المالية ، متبوعة بالمصروفات. بعد ذلك ، يظهر البيان صافي الدخل (أو صافي الخسارة)
+<p style="color: black;">When revenues exceed expenses, net 
+     income results. When expenses exceed revenues, a net loss results</p>
+     عندما تتجاوز الإيرادات النفقات ، ينتج صافي الدخل. عندما تتجاوز المصروفات الإيرادات ، ينتج عن صافي الخسارة
+<p style="color: black;">Note that the income statement does not include investment and dividend transactions between the shareholders and the business in measuring net income</p>
+علما بأن قائمة الدخل لا تشمل معاملات الاستثمار وتوزيعات الأرباح بين المساهمين والأعمال في قياس صافي الدخل
+<div lass="table-container">
+     <table>
+          <tr>
+               <th>Accounts - الحساب</td>
+               <th colspan="2">Amount - المبلغ</td>
+          </tr>
+          <tr>
+               <td>sales revenue - ايراد المبيعات</td>
+               <td>xx</td>
+               <td></td>
+          </tr>
+          <tr>
+               <td>service revenue - ايراد الخدمات </td>
+               <td>xx</td>
+               <td></td>
+          </tr>
+          <tr>
+               <td>rent revenue - ايراد الايجار </td>
+               <td>xx</td>
+               <td></td>
+          </tr>
+          <tr>
+               <td>interset revenue - ايراد الفائدة </td>
+               <td>xx</td>
+               <td></td>
+          </tr>
+          <tr>
+               <td>dividends revenue - ايراد الارباح</td>
+               <td>xx</td>
+               <td></td>
+          </tr>
+          <tr style="background-color: #4eb3e5;">
+               <td>TOTAL REVENUE - اجمالي الايرادات </td>
+               <td></td>
+               <td>xx</td>
+          </tr>
+          <tr>
+               <td colspan="3">Expenses - المصروفات </td>
+               
+          </tr>
+          <tr>
+               <td>salaries expense - مصروف الرواتب </td>
+               <td>xx</td>
+               <td></td>
+          </tr>
+          <tr>
+               <td>rent expense - مصروف الايجار </td>
+               <td>xx</td>
+               <td></td>
+          </tr>
+          <tr>
+               <td>depreciation expense - مصروف الاهلاك</td>
+               <td>xx</td>
+               <td></td>
+          </tr>
+          <tr>
+               <td>supplies expense - مصروف المهمات </td>
+               <td>xx</td>
+               <td></td>
+          </tr>
+          <tr>
+               <td>utilities expense - مصروفات متنوعة</td>
+               <td>xx</td>
+               <td></td>
+          </tr>
+          <tr>
+               <td>admin expense - مصروفات ادارية</td>
+               <td>xx</td>
+               <td></td>
+          </tr>
+          <tr>
+               <td>marketing expense - مصروف الدعاية</td>
+               <td>xx</td>
+               <td></td>
+          </tr>
+          <tr>
+               <td>advertising expense - مصروف الاعلان</td>
+               <td>xx</td>
+               <td></td>
+          </tr>
+          <tr>
+               <td>selling expense - مصروفات بيعية </td>
+               <td>xx</td>
+               <td></td>
+          </tr>
+          <tr>
+               <td>general expense - مصروفات عمومية </td>
+               <td>xx</td>
+               <td></td>
+          </tr>
+          <tr>
+               <td>adminstrative expense - مصروفات ادارية </td>
+               <td>xx</td>
+               <td></td>
+          </tr>
+          <tr>
+               <td>insurance expense - مصروف التامين </td>
+               <td>xx</td>
+               <td></td>
+          </tr>
+          <tr style="background-color: #4eb3e5;">
+               <td>TOTAL EXPENSES - اجمالي المصروفات </td>
+               <td></td>
+               <td>XX</td>
+          </tr>
+     </tr>
+     <tr style="background-color: #4eb3e5;">
+          <td>net income(net loss) - صافي الربح ( الخسارة)</td>
+          <td></td>
+          <td>XX</td>
+     </tr>
+</table>
+</div>
+</div>
+
+
+<div class="section" id="section25">
+<h3> retained earnings statement - قائمة الارباح المرحلة  🚦🚦</h3>
+<p style="color: blueviolet;"> summarizes the changes in retained earnings 
+    for a specific period of time</p>
+    يلخص التغيرات في الأرباح المحتجزة لفترة زمنية محددة
+<p style="color: blueviolet;"> The fi rst line of the statement shows the beginning retained earnings amount. Then come net income and dividends. The retained earnings ending balance is the final amount on the statement</p>
+يوضح السطر الأول من البيان مبلغ الأرباح المحتجزة في البداية. ثم يأتي صافي الدخل وأرباح الأسهم. الرصيد النهائي للأرباح المحتجزة هو المبلغ المالي في البيان
+<div class="table-container">
+<table>
+<tr>
+    <th>Accounts - الحساب</td>
+    <th colspan="2">Amount - المبلغ</td>
+</tr>
+<tr>
+    <td>Beginning retained earnings - الارباح المرحلة اول الفترة </td>
+    <td>xx</td>
+    <td></td>
+</tr>
+<tr>
+    <td>add:Net income - يضاف اليها صافي الربح </td>
+    <td>xx</td>
+    <td></td>
+</tr>
+<tr>
+    <td>less:dividends - يخصم توزيعات الارباح </td>
+    <td>xx</td>
+    <td></td>
+</tr>
+<tr style="background-color: #4eb3e5;">
+    <td>Ending Retained earnings - الارباح المرحلة اخر الفترة </td>
+    <td></td>
+    <td>xx</td>
+</tr>
+</table>    
+</div>
+</div>
+
+<div class="section" id="section26">
+<h3> ⚖️⚖️ statement of financial position - قائمة المركز المالي  </h3>
+<p style="color: blueviolet;">(sometimes referred to as a balance sheet) 
+    reports the assets, liabilities, and equity of a company at a specifi c date</p>
+    (يشار إليها أحيانا باسم الميزانية العمومية) تقارير عن الأصول والخصوم وحقوق الملكية للشركة في تاريخ محدد 
+<p>statement of financial position reports the assets, liabilities, and equity at a specific date</p>
+بيان المركز المالي المالي تقارير الأصول والخصوم وحقوق الملكية في تاريخ محدد
+<div class="table-container">
+<table>
+<tr>
+    <th>Accounts - الحساب </th>
+    <th colspan="2"> Amount - المبلغ</th>
+</tr>
+<tr style="background-color: #aef50a;">
+    <td colspan="3"> ASSETS - الاصول</td>
+
+</tr>
+<tr>
+    <td>Equipment - المعدات </td>
+    <td>xx</td>
+    <td></td>
+</tr>
+<tr>
+    <td>Truck - سيارات نقل </td>
+    <td>xx</td>
+    <td></td>
+</tr>
+<tr>
+    <td>machine - الالات </td>
+    <td>xx</td>
+    <td></td>
+</tr>
+<tr>
+    <td>land - الاراضي </td>
+    <td>xx</td>
+    <td></td>
+</tr>
+<tr>
+    <td>investments - الاستثمارات </td>
+    <td>xx</td>
+    <td></td>
+</tr>
+<tr>
+    <td>-Accumulated depreciation - بالناقص مجمع الاهلاك</td>
+    <td>xx</td>
+    <td></td>
+</tr>
+<tr>
+    <td>cash - النقدية </td>
+    <td>xx</td>
+    <td></td>
+</tr>
+<tr>
+    <td>inventory - المخزون</td>
+    <td>xx</td>
+    <td></td>
+</tr>
+<tr>
+    <td>supplies - المهمات </td>
+    <td>xx</td>
+    <td></td>
+</tr>
+<tr>
+    <td>Accounts receivable - العملاء او المدينون </td>
+    <td>xx</td>
+    <td></td>
+</tr>
+<tr>
+    <td>prepaid rent - ايجار مقدم  </td>
+    <td>xx</td>
+    <td></td>
+</tr>
+<tr>
+    <td>prepaid insurance - تامين مقدم </td>
+    <td>xx</td>
+    <td></td>
+</tr>
+<tr style="background-color: cadetblue;">
+    <td>TOTAL ASSETS - اجمالي الاصول</td>
+    <td></td>
+    <td>XX</td>
+</tr>
+<tr style="background-color: #aef50a;">
+    <td colspan="3"> LIABILITIES AND EQUITY - الالتزامات وحقوق الملكية  </td>
+</tr>
+<tr>
+    <td>Accounts payable - الدائنون </td>
+    <td>xx</td>
+    <td></td>
+</tr>
+<tr>
+    <td>Note payable - ورقة الدفع </td>
+    <td>xx</td>
+    <td></td>
+</tr>
+<tr>
+    <td>salaries payable - الرواتب المستحقة </td>
+    <td>xx</td>
+    <td></td>
+</tr>
+<tr>
+    <td>rent payable - الايجار المستحق </td>
+    <td>xx</td>
+    <td></td>
+</tr>
+<tr>
+    <td>unearned revenue - ايراد مقدم </td>
+    <td>xx</td>
+    <td></td>
+</tr>
+<tr>
+    <td>loans - القروض </td>
+    <td>xx</td>
+    <td></td>
+</tr>
+<tr>
+    <td>interest payable - الفائدة المستحقة </td>
+    <td>xx</td>
+    <td></td>
+</tr>
+<tr style="background-color: #4eb3e5;">
+    <td>TOTAL LIABILITY - اجمالي الالتزامات </td>
+    <td></td>
+    <td>XX</td>
+</tr>
+<tr style="background-color: #aef50a;">
+    <td colspan="3">EQUITY - حقوق الملكية </td>
+    
+</tr>
+<tr>
+    <td>share capital - راس المال</td>
+    <td>xx</td>
+    <td></td>
+</tr>
+<tr>
+    <td>Retained earnings - الارباح المرحلة </td>
+    <td>xx</td>
+    <td></td>
+</tr>
+<tr>
+    <td>TOTAL EQUITY - اجمالي حقوق الملكية </td>
+    <td></td>
+    <td>XX</td>
+</tr>
+<tr style="background-color: cadetblue;">
+    <td>TOTAL LIABILITIES AND EQUITY - اجمالي الالتزامات وحقوق الملكية </td>
+    <td></td>
+    <td>XX</td>
+</tr>
+</table>
+</div>
+</div>
+
+<div class="section" id="section27">
+<h3> 🧐🧐 Statement of Cash Flows - قائمة التدفقات النقدية </h3>
+<p style="color: blueviolet;">The statement of cash flows provides information on the cash receipts and payments for a specific period of time</p>
+يوفر بيان المبالغ النقدية معلومات عن المقبوضات والمدفوعات النقدية لفترة زمنية محددة
+</div>
+
+<div class="section" id="section28" style="background-color: #f1acac;">
+<h3>QUESTIONS ❓❓</h3>
+<P style="color: red;">Presented below is selected information related to Flanagan Group plc at December 31, 2017. Flanagan reports financial information monthly. <br>
+    Equipment £10,000  <br> Utilities Expense £ 4,000 <br>
+    Cash 8,000   <br> Accounts Receivable 9,000 <br>
+    Service Revenue 36,000    <br> Salaries and Wages Expense 7,000 <br>
+    Rent Expense 11,000   <br> Notes Payable 16,500  <br>
+    Accounts Payable 2,000   <br> Dividends 5,000  <br>
+    (a) Determine the total assets of Flanagan at December 31, 2017.</P>
+
+<div class="table-container">
+    <table>
+         <tr>
+              <th> Accounts </th>
+              <th colspan="2"> Amount</th> 
+         </tr>
+         <tr>
+              <td>Equipment</td>
+              <td>£ 10,000</td>
+              <td></td>
+         </tr>
+         <tr>
+              <td>Cash</td>
+              <td>£ 8,000</td>
+              <td></td>
+         </tr>
+         <tr>
+              <td>Accounts Receivable</td>
+              <td>£ 9,000</td>
+              <td></td>
+         </tr>
+         <tr style="background-color: #4eb3e5;">
+              <td>TOTAL ASSETS</td>
+              <td></td>
+              <td>£ 27,000</td>
+         </tr>
+
+    </table>
+</div>
+<p style="color: red;">(b) Determine the net income that Flanagan reported for December 2017.</p>
+
+<div class="table-container">
+    <table>
+         <tr>
+              <th> Accounts </th>
+              <th colspan="2"> Amount</th> 
+         </tr>
+         <tr>
+              <td>Service Revenue</td>
+              <td>£ 36,000</td>
+              <td></td>
+         </tr>
+         <tr style="background-color: #4eb3e5;">
+              <td>TOTAL REVENUE</td>
+              <td></td>
+              <td>£ 36,000 </td>
+         </tr>
+         
+         <tr>
+              <td>Salaries and Wages Expense</td>
+              <td>£ 7,000</td>
+              <td></td>
+         </tr>
+         <tr>
+              <td>Rent Expense</td>
+              <td>£ 11,000</td>
+              <td></td>
+         </tr>
+         <tr>
+              <td>Utilities expense </td>
+              <td>£ 4,000</td>
+              <td></td>
+         </tr>
+         <tr style="background-color: #4eb3e5;">
+              <td>TOTAL EXPENSES</td>
+              <td></td>
+              <td>£ 22,000</td>
+         </tr>
+         <tr style="background-color: rgb(195, 243, 114);">
+              <td colspan="2">Net income  = 36,000 -22,000 </td>
+              <td>£ 14,000</td>
+         </tr>
+         </table>
+         </div>
+</div>
+
+</div>
+
+<div class="section" id="section29">
+<h3>QUESTIONS ❓❓✅ or ❎   - chapter 1 </h3>
+<div class="quiz-container">
+<div class="question">
+<p style="color: #ff5733;">1.  Owners of business firms are the only people who need accounting information.</p>
+أصحاب الشركات التجارية هم الأشخاص الوحيدون الذين يحتاجون إلى معلومات المحاسبة
+<ul class="options">
+<li><button onclick="checkAnswer(this, false)">A. 	True ✅</button></li>
+<li><button onclick="checkAnswer(this, true)">B. False ❎</button></li>
+</ul>    
+</div>
+<hr>
+
+
+   
+<div class="question">
+<p style="color: #ff5733;">2.  Transactions that can be measured in dollars and cents are recorded in the financial information system</p>
+يتم تسجيل المعاملات التي يمكن قياسها بالدولارات والسنوات في نظام المعلومات المالية    
+<ul class="options">
+<li><button onclick="checkAnswer(this, true)">A. 	True ✅</button></li>
+<li><button onclick="checkAnswer(this, false)">B. False ❎</button></li>
+</ul>    
+</div>
+<hr>
+
+
+<div class="question">
+<p style="color: #ff5733;">3.  The hiring of a new company president is an economic event recorded by the financial information system.</p>
+إن تعيين رئيس جديد للشركة هو حدث اقتصادي يسجله نظام المعلومات المالية
+<ul class="options">
+<li><button onclick="checkAnswer(this, false)">A. 	True ✅</button></li>
+<li><button onclick="checkAnswer(this, true)">B. False ❎</button></li>
+</ul>    
+</div>
+<hr>
+
+
+<div class="question">
+<p style="color: #ff5733;">4.  Management of a business enterprise is the major external user of information.</p>
+إدارة المؤسسة التجارية هي المستخدم الخارجي الرئيسي للمعلومات
+<ul class="options">
+<li><button onclick="checkAnswer(this, false)">A. 	True ✅</button></li>
+<li><button onclick="checkAnswer(this, true)">B. False ❎</button></li>
+</ul>    
+</div>
+<hr>
+
+
+<div class="question">
+<p style="color: #ff5733;"> 5.  Accounting communicates financial information about a business enterprise to both internal and external users</p>
+تقوم المحاسبة بتوصيل المعلومات المالية حول المؤسسة التجارية للمستخدمين الداخليين والخارجيين
+<ul class="options">
+<li><button onclick="checkAnswer(this, true)">A. 	True ✅</button></li>
+<li><button onclick="checkAnswer(this, false)">B. False ❎</button></li>
+</ul>    
+</div>
+<hr>
+
+
+<div class="question">
+<p style="color: #ff5733;"> 6.  Accounting information is used only by external users with a financial interest in a business enterprise.</p>
+يتم استخدام المعلومات المحاسبية فقط من قبل المستخدمين الخارجيين الذين لديهم مصلحة مالية في مؤسسة تجارية
+<ul class="options">
+<li><button onclick="checkAnswer(this, false)">A. 	True ✅</button></li>
+<li><button onclick="checkAnswer(this, true)">B. False ❎</button></li>
+</ul>    
+</div>
+<hr>
+
+
+<div class="question">
+<p style="color: #ff5733;"> 7.  Financial statements are the major means of communicating accounting information to interested parties.</p>
+تعتبر القوائم المالية الوسيلة الرئيسية لتوصيل المعلومات المحاسبية للأطراف المهتمة
+<ul class="options">
+<li><button onclick="checkAnswer(this, true)">A. 	True ✅</button></li>
+<li><button onclick="checkAnswer(this, false)">B. False ❎</button></li>
+</ul>    
+</div>
+<hr>
+
+
+<div class="question">
+<p style="color: #ff5733;"> 8.  Bookkeeping and accounting are one and the same because the bookkeeping function includes the accounting process. </p>
+إن المحاسبة والمسك الدفاتر هما نفس الشيء لأن وظيفة الحفظ الدفاتر تتضمن عملية المحاسبة
+<ul class="options">
+<li><button onclick="checkAnswer(this, false)">A. 	True ✅</button></li>
+<li><button onclick="checkAnswer(this, true)">B. False ❎</button></li>
+</ul>    
+</div>
+<hr>
+
+<div class="question">
+<p style="color: #ff5733;"> 9.  The study of accounting will be useful only if a student is interested in working for a profit-oriented business firm. </p>
+ستكون دراسة المحاسبة مفيدة فقط إذا كان الطالب مهتمًا بالعمل في شركة تجارية موجهة نحو الربح
+<ul class="options">
+<li><button onclick="checkAnswer(this, false)">A. 	True ✅</button></li>
+<li><button onclick="checkAnswer(this, true)">B. False ❎</button></li>
+</ul>    
+</div>
+<hr>
+
+
+<div class="question">
+<p style="color: #ff5733;"> 10.  Private accountants are accountants who are not employees of business enterprises. </p>
+المحاسبون الخاصون هم المحاسبون الذين ليسوا موظفين في المؤسسات التجارية
+<ul class="options">
+<li><button onclick="checkAnswer(this, false)">A. 	True ✅</button></li>
+<li><button onclick="checkAnswer(this, true)">B. False ❎</button></li>
+</ul>    
+</div>
+<hr>
+
+
+<div class="question">
+<p style="color: #ff5733;"> 11.  The primary accounting standard-setting body in the United States is the International Accounting Standards Board. </p>
+الهيئة الأساسية لوضع معايير المحاسبة في الولايات المتحدة هي مجلس معايير المحاسبة الدولية
+<ul class="options">
+<li><button onclick="checkAnswer(this, false)">A. 	True ✅</button></li>
+<li><button onclick="checkAnswer(this, true)">B. False ❎</button></li>
+</ul>    
+</div>
+<hr>
+
+
+<div class="question">
+<p style="color: #ff5733;"> 12.  The Financial Accounting Standards Board is a part of the Securities and Exchange Commission. </p>
+مجلس معايير المحاسبة المالية هو جزء من هيئة الأوراق المالية والبورصة
+<ul class="options">
+<li><button onclick="checkAnswer(this, false)">A. 	True ✅</button></li>
+<li><button onclick="checkAnswer(this, true)">B. False ❎</button></li>
+</ul>    
+</div>
+<hr>
+
+
+<div class="question">
+<p style="color: #ff5733;">  13.  The cost and fair market value of an asset are the same at the time of acquisition and in all subsequent periods. </p>
+تكون التكلفة والقيمة السوقية العادلة للأصل هي نفسها في وقت الاستحواذ وفي جميع الفترات اللاحقة
+<ul class="options">
+<li><button onclick="checkAnswer(this, false)">A. 	True ✅</button></li>
+<li><button onclick="checkAnswer(this, true)">B. False ❎</button></li>
+</ul>    
+</div>
+<hr>
+
+<div class="question">
+<p style="color: #ff5733;">    14.  A partnership must have more than one owner. </p>
+يجب أن يكون للشراكة أكثر من مالك واحد   
+<ul class="options">
+<li><button onclick="checkAnswer(this, true)">A. 	True ✅</button></li>
+<li><button onclick="checkAnswer(this, false)">B. False ❎</button></li>
+</ul>    
+</div>
+<hr>
+
+
+<div class="question">
+<p style="color: #ff5733;">    15.  The economic entity assumption requires that the activities of an entity be kept separate and distinct from the activities of its owner and all other economic entities. </p>
+يتطلب افتراض الكيان الاقتصادي أن تظل أنشطة الكيان منفصلة ومتميزة عن أنشطة مالكه وجميع الكيانات الاقتصادية الأخرى
+<ul class="options">
+<li><button onclick="checkAnswer(this, true)">A. 	True ✅</button></li>
+<li><button onclick="checkAnswer(this, false)">B. False ❎</button></li>
+</ul>    
+</div>
+<hr>
+
+<div class="question">
+<p style="color: #ff5733;">      16.  The monetary unit assumption states that transactions that can be measured in terms of money should be recorded in the accounting records. </p>
+تنص فرضية الوحدة النقدية على أنه يجب تسجيل المعاملات التي يمكن قياسها من حيث النقود في السجلات المحاسبية    
+<ul class="options">
+<li><button onclick="checkAnswer(this, true)">A. 	True ✅</button></li>
+<li><button onclick="checkAnswer(this, false)">B. False ❎</button></li>
+</ul>    
+</div>
+<hr>
+
+
+<div class="question">
+<p style="color: #ff5733;">       17.  In order to possess future service potential, an asset must have physical substance. </p>
+من أجل امتلاك إمكانات الخدمة المستقبلية، يجب أن يكون للأصل مادة مادية
+<ul class="options">
+<li><button onclick="checkAnswer(this, false)">A. 	True ✅</button></li>
+<li><button onclick="checkAnswer(this, true)">B. False ❎</button></li>
+</ul>    
+</div>
+<hr>
+
+
+<div class="question">
+<p style="color: #ff5733;">   18.  Owners' claims to total business assets take precedence over the claims of creditors because owners invest assets in the business and are liable for losses.  </p>
+إن مطالبات الملاك بإجمالي أصول العمل لها الأولوية على مطالبات الدائنين لأن الملاك يستثمرون أصولاً في العمل وهم مسؤولون عن الخسائر
+<ul class="options">
+<li><button onclick="checkAnswer(this, false)">A. 	True ✅</button></li>
+<li><button onclick="checkAnswer(this, true)">B. False ❎</button></li>
+</ul>    
+</div>
+<hr>
+
+
+<div class="question">
+<p style="color: #ff5733;">  19.  The basic accounting equation states that Assets = Liabilities.  </p>
+تنص معادلة المحاسبة الأساسية على أن الأصول = الالتزامات 
+<ul class="options">
+<li><button onclick="checkAnswer(this, false)">A. 	True ✅</button></li>
+<li><button onclick="checkAnswer(this, true)">B. False ❎</button></li>
+</ul>    
+</div>
+<hr>
+
+
+<div class="question">
+<p style="color: #ff5733;"> 20.  Accountants record both internal and external transactions.  </p>
+يقوم المحاسبون بتسجيل المعاملات الداخلية والخارجية
+<ul class="options">
+<li><button onclick="checkAnswer(this, true)">A. 	True ✅</button></li>
+<li><button onclick="checkAnswer(this, false)">B. False ❎</button></li>
+</ul>    
+</div>
+<hr>
+
+
+<div class="question">
+<p style="color: #ff5733;"> 21.  Internal transactions do not affect the basic accounting equation because they are economic events that occur entirely within one company.  </p>
+لا تؤثر المعاملات الداخلية على معادلة المحاسبة الأساسية لأنها أحداث اقتصادية تحدث بالكامل داخل شركة واحدة
+<ul class="options">
+<li><button onclick="checkAnswer(this, false)">A. 	True ✅</button></li>
+<li><button onclick="checkAnswer(this, true)">B. False ❎</button></li>
+</ul>    
+</div>
+<hr>
+
+
+<div class="question">
+<p style="color: #ff5733;"> 22.  The purchase of store equipment for cash reduces the owner's equity by an equal amount.  </p>
+يؤدي شراء معدات المتجر نقدًا إلى تقليل حقوق الملكية للمالك بمقدار مماثل
+<ul class="options">
+<li><button onclick="checkAnswer(this, false)">A. 	True ✅</button></li>
+<li><button onclick="checkAnswer(this, true)">B. False ❎</button></li>
+</ul>    
+</div>
+<hr>
+
+
+<div class="question">
+<p style="color: #ff5733;"> 23.  The purchase of office equipment on credit increases total assets and total liabilities.  </p>
+شراء المعدات المكتبية بالاجل  يزيد من إجمالي الأصول وإجمالي الالتزامات
+<ul class="options">
+<li><button onclick="checkAnswer(this, true)">A. 	True ✅</button></li>
+<li><button onclick="checkAnswer(this, false)">B. False ❎</button></li>
+</ul>    
+</div>
+<hr>
+
+
+<div class="question">
+<p style="color: #ff5733;"> 24.  The primary purpose of the statement of cash flows is to provide information about the cash receipts and cash payments of a company during a period.  </p>
+الغرض الأساسي من بيان التدفقات النقدية هو تقديم معلومات حول الإيرادات النقدية والمدفوعات النقدية للشركة خلال فترة   
+<ul class="options">
+<li><button onclick="checkAnswer(this, true)">A. 	True ✅</button></li>
+<li><button onclick="checkAnswer(this, false)">B. False ❎</button></li>
+</ul>    
+</div>
+<hr>
+
+
+<div class="question">
+<p style="color: #ff5733;"> 25.  Net income for the period is determined by subtracting total expenses and drawings from total revenues.  </p>
+يتم تحديد صافي الدخل للفترة عن طريق طرح إجمالي المصروفات والسحوبات من إجمالي الإيرادات
+<ul class="options">
+<li><button onclick="checkAnswer(this, false)">A. 	True ✅</button></li>
+<li><button onclick="checkAnswer(this, true)">B. False ❎</button></li>
+</ul>    
+</div>
+<hr>
+
+<div class="question">
+<p style="color: #ff5733;">  26.  The monetary unit assumption requires that all dollar amounts be rounded to the nearest dollar  </p>
+يتطلب افتراض الوحدة النقدية تقريب جميع المبالغ بالدولار إلى أقرب دولار  
+<ul class="options">
+<li><button onclick="checkAnswer(this, false)">A. 	True ✅</button></li>
+<li><button onclick="checkAnswer(this, true)">B. False ❎</button></li>
+</ul>    
+</div>
+<hr>
+
+
+<div class="question">
+<p style="color: #ff5733;">  27.  The basic accounting equation is in balance when the creditor and ownership claims against the business equal the assets.  </p>
+المعادلة المحاسبية الأساسية تكون متوازنة عندما تكون مطالبات الدائنين والملكية ضد الشركة مساوية للأصول
+<ul class="options">
+<li><button onclick="checkAnswer(this, true)">A. 	True ✅</button></li>
+<li><button onclick="checkAnswer(this, false)">B. False ❎</button></li>
+</ul>    
+</div>
+<h5>Assets = liabilities + Equity</h5>
+<hr>
+
+
+<div class="question">
+<p style="color: #ff5733;"> 28.  External transactions involve economic events between the company and some other enterprise or party.  </p>
+تتضمن المعاملات الخارجية أحداثًا اقتصادية بين الشركة وبعض المؤسسات أو الأطراف الأخرى    
+<ul class="options">
+<li><button onclick="checkAnswer(this, true)">A. 	True ✅</button></li>
+<li><button onclick="checkAnswer(this, false)">B. False ❎</button></li>
+</ul>    
+</div>
+<hr>
+
+
+<div class="question">
+<p style="color: #ff5733;">  29.  In the owner's equity statement, revenues are listed first, followed by expenses, and net income (or net loss).  </p>
+في بيان حقوق الملكية، يتم إدراج الإيرادات أولاً، تليها المصروفات، ثم صافي الدخل (أو صافي الخسارة)
+<ul class="options">
+<li><button onclick="checkAnswer(this, false)">A. 	True ✅</button></li>
+<li><button onclick="checkAnswer(this, true)">B. False ❎</button></li>
+</ul>    
+</div>
+<h5>Equity = share capital - dividends + revenues - expenses</h5>
+<hr>
+</div>
+</div>
+
+
+<div class="section" id="section30">
+<h3>MULTIPLE CHOICE QUESTIONS - chapter 1</h3>
+<div class="quiz-container">
+<div class="question">
+<p style="color: #ff5733;"> 41.  Accountants refer to an economic event as a </p>
+يشير المحاسبون إلى الحدث الاقتصادي باعتباره
+<ul class="options">
+<li><button onclick="checkAnswer(this, false)">a. purchase.</button></li>
+<li><button onclick="checkAnswer(this, false)">b. sale</button></li>
+<li><button onclick="checkAnswer(this, true)">c. transaction.</button></li>
+<li><button onclick="checkAnswer(this, false)">d.  change in ownership</button></li>
+</ul>    
+</div>
+<hr>
+
+
+
+
+ </div>   
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<script>
+   
+    function showSection() {
+        const selectedSection = document.getElementById('sectionSelect').value;
+        document.querySelectorAll('.section').forEach(section => {
+            section.style.display = 'none';
+        });
+        if (selectedSection) {
+            document.getElementById(selectedSection).style.display = 'block';
+        }
+    }
+</script>
+<script>
+     // الآلة الحاسبة
+     let display = document.getElementById('display');
+     let currentInput = '';
+     
+     function appendNumber(number) {
+         currentInput = (currentInput === '0') ? number.toString() : currentInput + number;
+         updateDisplay(currentInput);
+     }
+     
+     function appendDot() {
+         if (!currentInput.includes('.')) {
+             currentInput += '.';
+             updateDisplay(currentInput);
+         }
+     }
+     
+     function appendOperator(op) {
+         currentInput += op;
+         updateDisplay(currentInput);
+     }
+     
+     function calculate() {
+         try {
+             currentInput = eval(currentInput.replace('%', '/100')).toString();
+             updateDisplay(currentInput);
+         } catch {
+             updateDisplay('خطأ');
+             currentInput = '';
+         }
+     }
+     
+     function clearDisplay() {
+         currentInput = '';
+         updateDisplay('0');
+     }
+     
+     function updateDisplay(value) {
+         display.innerText = value;
+     }
+     
+     function toggleCalculator() {
+         const calculator = document.getElementById('calculator');
+         const overlay = document.getElementById('overlay');
+         calculator.style.display = (calculator.style.display === 'none' || calculator.style.display === '') ? 'block' : 'none';
+         overlay.style.display = 'none';
+     }
+</script>
+
+<script>
+    // تعطيل الزر الأيمن للفأرة
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+    });
+
+    // تعطيل تحديد النص
+    document.addEventListener('selectstart', function(e) {
+        e.preventDefault();
+    });
+
+    // تعطيل نسخ النص
+    document.addEventListener('copy', function(e) {
+        e.preventDefault();
+    });
+</script>
+
+
+<script>
+    document.onkeydown = function(e) {
+        // تعطيل F12 (أدوات المطور)
+        if (e.keyCode == 123) {
+            return false;
+        }
+        // تعطيل Ctrl+Shift+I (أدوات المطور)
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+            return false;
+        }
+        // تعطيل Ctrl+U (عرض المصدر)
+        if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+            return false;
+        }
+        // تعطيل Ctrl+C (نسخ)
+        if (e.ctrlKey && e.keyCode == 'C'.charCodeAt(0)) {
+            return false;
+        }
+        // تعطيل Ctrl+V (لصق)
+        if (e.ctrlKey && e.keyCode == 'V'.charCodeAt(0)) {
+            return false;
+        }
+        // تعطيل Ctrl+X (قص)
+        if (e.ctrlKey && e.keyCode == 'X'.charCodeAt(0)) {
+            return false;
+        }
+        // تعطيل Ctrl+A (تحديد الكل)
+        if (e.ctrlKey && e.keyCode == 'A'.charCodeAt(0)) {
+            return false;
+        }
+    };
+</script>
+
+<script>
+    function checkAnswer(button, isCorrect) {
+        if (isCorrect) {
+            button.classList.add('correct');
+        } else {
+            button.classList.add('incorrect');
+        }
+    }
+</script>
+
+
+
+
+</body>
+</html>
